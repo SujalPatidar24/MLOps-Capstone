@@ -216,3 +216,4 @@ models/
 *csv
 *.csv
 notebooks/*.csv
+*.csv
