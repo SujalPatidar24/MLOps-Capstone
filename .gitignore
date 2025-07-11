@@ -212,6 +212,7 @@ data/processed/
 data/raw/
 models/
 
-notebooks/IMDB.csv
-notebooks/imdb.csv
+
+*csv
 *.csv
+notebooks/*.csv
