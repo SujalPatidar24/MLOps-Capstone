@@ -6,7 +6,6 @@ import os
 import pandas as pd
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 import pickle
-from io import StringIO
 
 class TestModelLoading(unittest.TestCase):
 
@@ -36,19 +35,8 @@ class TestModelLoading(unittest.TestCase):
         # Load the vectorizer
         cls.vectorizer = pickle.load(open('models/vectorizer.pkl', 'rb'))
 
-        mock_csv = """ review,sentiment
-        "Film version of Sandra Bernhard's one-woman off-Broadway show is gaspingly pretentious. Sandra spoofs lounge acts and superstars, but her sense of irony is only fitfully interesting, and fitfully funny. Her fans will say she's scathingly honest, and that may be true. But she's also shrill, with an unapologetic, in-your-face bravado that isn't well-suited to a film in this genre. She doesn't want to make nice--and she's certainly not out to make friends--and that's always going to rub a lot of people the wrong way. But even if you meet her halfway, her material here is seriously lacking. Filmmaker Nicolas Roeg served as executive producer and, though not directed by him, the film does have his chilly, detached signature style all over it. Bernhard co-wrote the show with director John Boskovich; their oddest touch was in having all of Sandra's in-house audiences looking completely bored--a feeling many real viewers will most likely share. *1/2 from ****",negative
-        I switched this on (from cable) on a whim and was treated to quite a surprise...although very predictable this film turned out to be quite enjoyable...no big stars but well-directed and just plain fun. With all the over-hyped crap that is out there it is very nice to get an unexpected surprise now and then... and this little film fits the bill nicely. 9/10,positive
-        "The `plot' of this film contains a few holes you could drive a massive truck through, but I reckon that isn't always top priority in horror. Two elderly sisters in rural England keep their brother in the cellar since more than 30 years. Now, he escaped and started a killing spree, focusing on militaries that are homed nearby. `We only did we thought was best for him' they keep on repeating and  strangely  all the army officers love these women and don't doubt their sincerity, even though 5 of their men died. I don't know whether to find the revelation near the end suspenseful  or tedious! In a way, this film reminded me about `Arsenic and Old Lace'. In that black-comedy classic, two half-insane siblings mother their goofy younger brother as well, yet they do the killing there. The old ladies in `The Beast in the Cellar' are by no means less crazy, though. The `horror' in this early 70's film is very amateurish and cheap, but there are a few neat attempts to build up the tension. Too many `old-ladies' talk about the good ol' days, though and that rarely is something you seek in a horror film with such an appealing title. Flora Robson, who may be recognized by classic film buffs, plays one of the sisters. She gave image to the Queen of England is the legendary Errol Flynn swashbuckler film, the Sea Hawk.",negative
-        "Some amusing humor, some that falls flat, some decent acting, some that is quite atrocious. This movie is simply hit and miss, guaranteed to amuse 12 year old boys more than any other niche.<br /><br />The child actors in the movie are just unfunny. When you are making a family comedy, that does tend to be a problem. Beverly D'Angelo rises above the material to give a funny, and dare I say it, human performance in the midst of this mediocrity.",negative"""
-        cls.holdout_data = pd.read_csv(StringIO(mock_csv))
-
-        # Use with open to avoid ResourceWarning
-        with open('models/vectorizer.pkl', 'rb') as f:
-            cls.vectorizer = pickle.load(f)
-
         # Load holdout test data
-        # cls.holdout_data = pd.read_csv('data/processed/test_bow.csv')
+        cls.holdout_data = pd.read_csv('data/processed/test_tfidf.csv')
 
     @staticmethod
     def get_latest_model_version(model_name, stage="Staging"):
