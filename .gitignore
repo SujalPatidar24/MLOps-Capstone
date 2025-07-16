@@ -206,18 +206,14 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 capstone/
-# data/external/
-# data/interim/
-# data/processed/
-# data/raw/
-models/
+data/external/
+data/interim/
+data/processed/
+data/raw/
+/models/*
 
 
+*csv
 *.csv
 notebooks/*.csv
-
-# Ignore the data folder in the root
-/data/
-
-# Allow the data folder in the src directory
-!/src/data/
+*.csv
