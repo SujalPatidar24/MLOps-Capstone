@@ -210,7 +210,7 @@ data/external/
 data/interim/
 data/processed/
 data/raw/
-/models/*
+# /models/*
 
 
 *csv
