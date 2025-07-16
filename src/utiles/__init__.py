@@ -73,3 +73,18 @@ def save_model_info(run_id: str, model_path: str, file_path: str) -> None:
     except Exception as e:
         logging.error('Error occurred while saving the model info: %s', e)
         raise
+
+
+def load_model_info(file_path: str) -> dict:
+    """Load the model info from a JSON file."""
+    try:
+        with open(file_path, 'r') as file:
+            model_info = json.load(file)
+        logging.debug('Model info loaded from %s', file_path)
+        return model_info
+    except FileNotFoundError:
+        logging.error('File not found: %s', file_path)
+        raise
+    except Exception as e:
+        logging.error('Unexpected error occurred while loading the model info: %s', e)
+        raise
