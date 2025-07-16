@@ -209,14 +209,9 @@ capstone/
 
 /models/*
 
-/data/
-data/*
-
-!/src/data/
-
-
-
 *csv
 *.csv
 notebooks/*.csv
 *.csv
+
+/data/
