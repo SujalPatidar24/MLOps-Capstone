@@ -217,3 +217,8 @@ models/
 *.csv
 notebooks/*.csv
 *.csv
+# Ignore the data folder in the root
+/data/
+
+# Allow the data folder in the src directory
+!/src/data/
