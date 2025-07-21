@@ -40,7 +40,7 @@ It not only includes model building but also:
 ## 📂 Project Structure
 
 --------
-
+```
 
 ├── src/
 │ ├── data_ingestion.py
@@ -62,7 +62,7 @@ It not only includes model building but also:
 ├── scripts/
 ├── requirements.txt
 
-
+```
 --------
 
 ## 🧪 ML Pipeline & Experiment Tracking
