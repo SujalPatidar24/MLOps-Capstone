@@ -1,57 +1,41 @@
-MLOps-Capstone
-==============================
+<h1 align="center">🚀 End-to-End ML Capstone Project Deployment on AWS</h1>
 
-End-to-End MLOps Project
+<p align="center">
+  <img src="https://img.shields.io/badge/Status-Actively%20Looking-green?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Skills-MLOps|CI%2FCD|AWS|EKS|Docker-blue?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Built%20With-Python%203.10-yellow?style=for-the-badge"/>
+</p>
 
-Project Organization
-------------
+---
 
-    ├── LICENSE
-    ├── Makefile           <- Makefile with commands like `make data` or `make train`
-    ├── README.md          <- The top-level README for developers using this project.
-    ├── data
-    │   ├── external       <- Data from third party sources.
-    │   ├── interim        <- Intermediate data that has been transformed.
-    │   ├── processed      <- The final, canonical data sets for modeling.
-    │   └── raw            <- The original, immutable data dump.
-    │
-    ├── docs               <- A default Sphinx project; see sphinx-doc.org for details
-    │
-    ├── models             <- Trained and serialized models, model predictions, or model summaries
-    │
-    ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-    │                         the creator's initials, and a short `-` delimited description, e.g.
-    │                         `1.0-jqp-initial-data-exploration`.
-    │
-    ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-    │
-    ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-    │   └── figures        <- Generated graphics and figures to be used in reporting
-    │
-    ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-    │                         generated with `pip freeze > requirements.txt`
-    │
-    ├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported
-    ├── src                <- Source code for use in this project.
-    │   ├── __init__.py    <- Makes src a Python module
-    │   │
-    │   ├── data           <- Scripts to download or generate data
-    │   │   └── make_dataset.py
-    │   │
-    │   ├── features       <- Scripts to turn raw data into features for modeling
-    │   │   └── build_features.py
-    │   │
-    │   ├── models         <- Scripts to train models and then use trained models to make
-    │   │   │                 predictions
-    │   │   ├── predict_model.py
-    │   │   └── train_model.py
-    │   │
-    │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
-    │       └── visualize.py
-    │
-    └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
+## 📌 About the Project
 
+This project demonstrates an **end-to-end Machine Learning workflow** for a real-world use case, integrated with **MLOps, Cloud Infrastructure (AWS), Docker, and CI/CD pipelines**.
 
---------
+It not only includes model building but also:
+- Model versioning via **MLflow** + **DAGsHub**
+- Data versioning via **DVC**
+- CI/CD using **GitHub Actions**
+- Deployment via **Docker** and **AWS EKS (Kubernetes)**
+- Monitoring using **Prometheus + Grafana**
 
-<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
+> 💡 **Goal:** Showcase production-grade ML project deployment & monitoring — not just model accuracy!
+
+---
+
+## 🧰 Tech Stack
+
+| Category         | Tools Used                                                                 |
+|------------------|----------------------------------------------------------------------------|
+| Programming      | Python 3.10                                                                |
+| ML Libraries     | Scikit-Learn, XGBoost, Pandas, SMOTE                                       |
+| MLOps Tools      | MLflow, DVC, GitHub Actions, Cookiecutter                                  |
+| Deployment       | Flask, Docker, AWS ECR, AWS EKS                                            |
+| Monitoring       | Prometheus, Grafana                                                        |
+| Cloud            | AWS (EC2, S3, EKS, IAM, ECR)                                               |
+| Version Control  | Git + GitHub + DAGsHub                                                     |
+
+---
+
+## 📂 Project Structure
+
