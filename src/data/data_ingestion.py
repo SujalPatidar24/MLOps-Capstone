@@ -7,8 +7,8 @@ import os
 from sklearn.model_selection import train_test_split
 import yaml
 import logging
-from src.logger import logging
-# from src.connections import s3_connection
+# from src.logger import logging
+from src.connections import s3_connection
 
 
 from src.utiles import load_params, load_data
@@ -46,12 +46,20 @@ def save_data(train_data: pd.DataFrame, test_data: pd.DataFrame, data_path: str)
 def main():
     try:
         params = load_params(params_path='params.yaml')
+
         test_size = params['data_ingestion']['test_size']
         # test_size = 0.25
         
-        df = load_data(data_url='https://raw.githubusercontent.com/vikashishere/Datasets/refs/heads/main/data.csv')
-        # s3 = s3_connection.s3_operations("bucket-name", "accesskey", "secretkey")
-        # df = s3.fetch_file_from_s3("data.csv")
+        # df = load_data(data_url='https://raw.githubusercontent.com/vikashishere/Datasets/refs/heads/main/data.csv')
+
+
+        creds = load_params(params_path='cred.yaml')
+        BUCKET_NAME = creds['data_ingestion']['bucket_name']
+        ACCESS_KEY = creds['data_ingestion']['access_key']
+        SECRET_KEY = creds['data_ingestion']['secret_key']
+
+        s3 = s3_connection.s3_operations(BUCKET_NAME,ACCESS_KEY,SECRET_KEY)
+        df = s3.fetch_file_from_s3("IMDB.csv")
 
 
 
