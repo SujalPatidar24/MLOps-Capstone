@@ -39,6 +39,9 @@ It not only includes model building but also:
 
 ## 📂 Project Structure
 
+--------
+
+
 ├── src/
 │ ├── data_ingestion.py
 │ ├── data_preprocessing.py
@@ -60,7 +63,7 @@ It not only includes model building but also:
 ├── requirements.txt
 
 
----
+--------
 
 ## 🧪 ML Pipeline & Experiment Tracking
 
@@ -80,15 +83,15 @@ It not only includes model building but also:
 4. **LoadBalancer Service** — Public access via External IP.
 
 
-📊 Monitoring Dashboard
+## 📊 Monitoring Dashboard
 Prometheus + Grafana is used to monitor:
 
-Inference time
+- Inference time
 
-API latency
+- API latency
 
-Request count
+- Request count
 
-CPU/RAM usage
+- CPU/RAM usage
 
-Dashboards hosted on EC2, ports 9090 & 3000.
+> Dashboards hosted on EC2, ports 9090 & 3000.
