@@ -33,6 +33,7 @@ jobs:
           BUCKET_NAME: ${{ secrets.BUCKET_NAME }}
           AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
           AWS_SECRET_KEY: ${{ secrets.AWS_SECRET_KEY }}
+          FILE_KEY: ${{ secrets.FILE_KEY }}
         run: |
           dvc repro
 
