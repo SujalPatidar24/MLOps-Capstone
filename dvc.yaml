@@ -4,7 +4,6 @@ stages:
   data_ingestion:
     cmd: python src/data/data_ingestion.py
     deps:
-    - src/connections/s3_connection.py
     - src/data/data_ingestion.py
     params:
     - data_ingestion.test_size

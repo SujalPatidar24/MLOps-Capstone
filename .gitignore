@@ -215,5 +215,5 @@ notebooks/*.csv
 *.csv
 
 /data/
-/src/connections/
+
 cred.yaml
