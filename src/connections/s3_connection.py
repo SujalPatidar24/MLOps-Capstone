@@ -4,6 +4,7 @@ import logging
 from src.logger import logging
 from io import StringIO
 from src.utiles import load_params
+import os
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -42,11 +43,18 @@ class s3_operations:
 # Example usage
 if __name__ == "__main__":
 
-    creds = load_params(params_path='cred.yaml')   
-    BUCKET_NAME = creds['data_ingestion']['bucket_name']
-    AWS_ACCESS_KEY = creds['data_ingestion']['access_key']
-    AWS_SECRET_KEY = creds['data_ingestion']['secret_key']
-    FILE_KEY = "IMDB.csv"  # Path inside S3 bucket
+    # creds = load_params(params_path='cred.yaml')   
+    # BUCKET_NAME = creds['data_ingestion']['bucket_name']
+    # AWS_ACCESS_KEY = creds['data_ingestion']['access_key']
+    # AWS_SECRET_KEY = creds['data_ingestion']['secret_key']
+    # FILE_KEY = "IMDB.csv"  # Path inside S3 bucket
+
+    BUCKET_NAME = os.getenv('BUCKET_NAME')
+    AWS_ACCESS_KEY = os.getenv('AWS_ACCESS_KEY')
+    AWS_SECRET_KEY = os.getenv('AWS_SECRET_KEY')
+    FILE_KEY = os.getenv('FILE_KEY')
+
+   
 
     data_ingestion = s3_operations(BUCKET_NAME, AWS_ACCESS_KEY, AWS_SECRET_KEY)
     df = data_ingestion.fetch_file_from_s3(FILE_KEY)

@@ -53,12 +53,18 @@ def main():
         # df = load_data(data_url='https://raw.githubusercontent.com/vikashishere/Datasets/refs/heads/main/data.csv')
 
 
-        creds = load_params(params_path='cred.yaml')
-        BUCKET_NAME = creds['data_ingestion']['bucket_name']
-        ACCESS_KEY = creds['data_ingestion']['access_key']
-        SECRET_KEY = creds['data_ingestion']['secret_key']
+        # creds = load_params(params_path='cred.yaml')
+        # BUCKET_NAME = creds['data_ingestion']['bucket_name']
+        # ACCESS_KEY = creds['data_ingestion']['access_key']
+        # SECRET_KEY = creds['data_ingestion']['secret_key']
 
-        s3 = s3_connection.s3_operations(BUCKET_NAME,ACCESS_KEY,SECRET_KEY)
+
+        BUCKET_NAME = os.getenv('BUCKET_NAME')
+        AWS_ACCESS_KEY = os.getenv('AWS_ACCESS_KEY')
+        AWS_SECRET_KEY = os.getenv('AWS_SECRET_KEY')
+        # FILE_KEY = os.getenv('FILE_KEY')
+
+        s3 = s3_connection.s3_operations(BUCKET_NAME,AWS_ACCESS_KEY,AWS_SECRET_KEY)
         df = s3.fetch_file_from_s3("IMDB.csv")
 
 
