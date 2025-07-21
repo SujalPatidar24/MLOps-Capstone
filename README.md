@@ -28,7 +28,7 @@ It not only includes model building but also:
 | Category         | Tools Used                                                                 |
 |------------------|----------------------------------------------------------------------------|
 | Programming      | Python 3.10                                                                |
-| ML Libraries     | Scikit-Learn, XGBoost, Pandas, SMOTE                                       |
+| ML Libraries     | Scikit-Learn, XGBoost, Pandas                                              |
 | MLOps Tools      | MLflow, DVC, GitHub Actions, Cookiecutter                                  |
 | Deployment       | Flask, Docker, AWS ECR, AWS EKS                                            |
 | Monitoring       | Prometheus, Grafana                                                        |
@@ -39,3 +39,56 @@ It not only includes model building but also:
 
 ## 📂 Project Structure
 
+├── src/
+│ ├── data_ingestion.py
+│ ├── data_preprocessing.py
+│ ├── feature_engineering.py
+│ ├── model_building.py
+│ ├── model_evaluation.py
+│ ├── register_model.py
+│ └── logger/
+├── dvc.yaml
+├── params.yaml
+├── flask_app/
+│ ├── app.py
+│ └── Dockerfile
+├── .github/
+│ └── workflows/
+│ └── ci.yaml
+├── tests/
+├── scripts/
+├── requirements.txt
+
+
+---
+
+## 🧪 ML Pipeline & Experiment Tracking
+
+✅ Tracked via `MLflow` (integrated with DAGsHub)  
+✅ Reproducible pipeline built using `DVC`  
+✅ Auto CI/CD triggered with GitHub Actions  
+✅ Data pushed to `AWS S3` via DVC remote  
+✅ Model metrics tracked & visualized on MLflow UI  
+
+---
+
+## 🌐 App Deployment
+
+1. **Dockerized Flask App** — Serving the model.
+2. **AWS ECR** — Stores the Docker image.
+3. **AWS EKS (Kubernetes)** — Scalable deployment.
+4. **LoadBalancer Service** — Public access via External IP.
+
+
+📊 Monitoring Dashboard
+Prometheus + Grafana is used to monitor:
+
+Inference time
+
+API latency
+
+Request count
+
+CPU/RAM usage
+
+Dashboards hosted on EC2, ports 9090 & 3000.
