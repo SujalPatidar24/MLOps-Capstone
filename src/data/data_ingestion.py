@@ -62,10 +62,10 @@ def main():
         BUCKET_NAME = os.getenv('BUCKET_NAME')
         AWS_ACCESS_KEY = os.getenv('AWS_ACCESS_KEY')
         AWS_SECRET_KEY = os.getenv('AWS_SECRET_KEY')
-        # FILE_KEY = os.getenv('FILE_KEY')
+        FILE_KEY = os.getenv('FILE_KEY')
 
         s3 = s3_connection.s3_operations(BUCKET_NAME,AWS_ACCESS_KEY,AWS_SECRET_KEY)
-        df = s3.fetch_file_from_s3("IMDB.csv")
+        df = s3.fetch_file_from_s3(FILE_KEY)
 
 
 
